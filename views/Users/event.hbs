@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{info.name}}</title>
+</head>
+<body>
+<p>{{info.info}}</p>
+<p>{{info.date}}</p>
+
+<form method="post" id="eventregister" name="eventregister" action="/users/registerevent">
+    <input type="hidden" type="text" id="id" name="id" value="{{info._id}}">
+    <select>
+        {{# each childList }}
+            <option>
+                {{ this.firstname }}</div>
+            </option>
+        {{/each}}
+    </select>
+    <button type="submit" id="register">
+        register for event
+    </button>
+</form>
+
+<form method="post" id="eventdelete" name="eventdelete" action="/users/deleteevent">
+    <input type="hidden" type="text" id="id" name="id" value="{{info._id}}">
+    <button type="submit" id="delete">
+        delete event
+    </button>
+</form>
+</body>
+</html>
